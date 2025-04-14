@@ -1,0 +1,65 @@
+/* Body background and font styles */
+body {
+    background-color: #fdf6e3;
+    color: #333;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styling */
+  .header {
+    background-color: #ffeb99;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #ffcc00;
+  }
+  
+  /* Main content area */
+  .content {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff8dc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer styling */
+  .footer {
+    background-color: #ffeb99;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 3px solid #ffcc00;
+  }
+  
+  /* Links */
+  a {
+    color: #cc8800;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Images */
+  img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+  }
+  
+  /* Tableau container */
+  .tableau-container {
+    margin: 30px 0;
+    text-align: center;
+  }
+  
+  /* Lists */
+  ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  

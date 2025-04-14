@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corny Fun Generator 🌽</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fff8e1, #ffe082);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #f57c00;
+      font-size: 2.8em;
+      text-shadow: 2px 2px #ffe0b2;
+    }
+    button {
+      background-color: #ffd54f;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    button:hover {
+      background-color: #ffb300;
+      transform: scale(1.05);
+    }
+    .output {
+      margin-top: 20px;
+      font-size: 1.4em;
+      color: #6d4c41;
+      min-height: 80px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .show {
+      opacity: 1;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #8bc34a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌽 Corny Fun Generator 🌽</h1>
+  <p>Get a random corn-themed joke, riddle, or fact!</p>
+  <button onclick="generateJoke()">Tell me a Joke 😂</button>
+  <button onclick="generateRiddle()">Give me a Riddle 🤔</button>
+  <button onclick="generateFact()">Teach me a Fact 📖</button>
+  <button onclick="surpriseMe()">Surprise Me! 🎉</button>
+
+  <div class="output" id="output"></div>
+
+  <a href="index.html">🏠 Back to Home</a>
+
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <script>
+    const jokes = [
+      "Why did the corn stalk break up with the field? Because it felt like it was being stalked!",
+      "What does corn say when it's frustrated? Aw, shucks!",
+      "Why shouldn’t you tell secrets in a cornfield? There are too many ears!",
+      "How does corn get around? It takes the kernel!",
+      "What did the corn say to the butter? You're on a roll!"
+    ];
+
+    const riddles = [
+      "I am golden but not a treasure, I have kernels but no military rank. What am I? (Answer: Corn!)",
+      "You see me in fields, my ears are everywhere, but I cannot hear. What am I? (Answer: Corn!)",
+      "I'm popped for fun, boiled for dinner, and creamed for side dishes. What am I? (Answer: Corn!)",
+      "Though I have ears, I cannot hear. Though I am husky, I never fear. What am I? (Answer: Corn!)",
+      "I grow tall in the summer sun, my yellow kernels are for everyone. What am I? (Answer: Corn!)"
+    ];
+
+    const facts = [
+      "Corn is grown on every continent except Antarctica!",
+      "Popcorn is the only type of corn that actually pops!",
+      "Corn can grow up to 12 feet tall in ideal conditions!",
+      "The average ear of corn has about 800 kernels arranged in 16 rows!",
+      "Corn was first domesticated by indigenous peoples in southern Mexico about 10,000 years ago!"
+    ];
+
+    const emojis = ["🌽", "🍿", "🌾", "🌞", "🥳"];
+
+    function playSound() {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function showOutput(message) {
+      playSound();
+      const output = document.getElementById('output');
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      output.innerHTML = `${message} ${randomEmoji}`;
+      output.classList.add('show');
+    }
+
+    function generateJoke() {
+      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      showOutput(randomJoke);
+    }
+
+    function generateRiddle() {
+      const randomRiddle = riddles[Math.floor(Math.random() * riddles.length)];
+      showOutput(randomRiddle);
+    }
+
+    function generateFact() {
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      showOutput(randomFact);
+    }
+
+    function surpriseMe() {
+      const functions = [generateJoke, generateRiddle, generateFact];
+      const randomFunction = functions[Math.floor(Math.random() * functions.length)];
+      randomFunction();
+    }
+  </script>
+</body>
+</html>
